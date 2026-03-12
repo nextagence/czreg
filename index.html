@@ -1,223 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI Game Predictor</title>
-
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-<style>
-
-.console-box{
-font-family:monospace;
-background:#1a1a1a;
-padding:1rem;
-border-radius:0.5rem;
-box-shadow:0 0 20px #00ff88;
-color:#00ff88;
-height:250px;
-overflow-y:auto;
-}
-
-.loading-screen{
-font-family:monospace;
-background:#000;
-color:#00ff88;
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
-flex-direction:column;
-z-index:50;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-}
-
-.hidden-screen{display:none;}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Game Predictor CZ</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .console-box {
+      font-family: monospace;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 20px #00ff88;
+      color: #00ff88;
+      height: 250px;
+      overflow-y: auto;
+    }
+    .loading-screen {
+      font-family: monospace;
+      background: #000;
+      color: #00ff88;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      z-index: 50;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    .hidden-screen { display: none; }
+  </style>
 </head>
 
 <body class="bg-gray-900 text-white font-sans">
+  <div id="loading" class="loading-screen">
+    <p>Loading... Please wait while we prepare your experience.</p>
+  </div>
 
-<div id="loading" class="loading-screen">
-<p>Loading... preparing prediction engine.</p>
-</div>
+  <div id="mainContent" class="hidden-screen">
+    <header class="w-full bg-gray-800 p-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-green-400">VAVADA AI Predictor Czech Republic</h1>
+      <nav class="space-x-4">
+        <a href="#how" class="hover:text-green-400">How It Works</a>
+        <a href="#games" class="hover:text-green-400">Games</a>
+        <a href="#start" class="hover:text-green-400">Get Started</a>
+      </nav>
+    </header>
 
-<div id="mainContent" class="hidden-screen">
+    <section id="start" class="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">Earn Real Money with AI Predictions</h2>
+      <p class="max-w-xl mb-8 text-gray-300">
+        Join players from the Czech Republic using our AI to improve their strategy in games like Aviator, Mines, and Penalty Shoot Out.
+        Real-time predictions, fast access, and a smooth gaming experience.
+      </p>
 
-<header class="w-full bg-gray-800 p-4 flex justify-between items-center">
-<h1 class="text-xl font-bold text-green-400">VAVADA AI Predictor</h1>
+      <button id="startButton"
+        class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition">
+        Start Earning
+      </button>
 
-<nav class="space-x-4">
-<a href="#how" class="hover:text-green-400">How It Works</a>
-<a href="#games" class="hover:text-green-400">Games</a>
-<a href="#start" class="hover:text-green-400">Get Started</a>
-</nav>
+      <div id="errorBox" class="hidden bg-red-600 p-6 rounded-xl max-w-md mx-auto mt-6">
+        <h2 class="text-xl font-bold mb-2">⚠️ Account Not Found</h2>
+        <p class="mb-4">
+          It looks like you are not registered yet. Create a new VAVADA account and make your first deposit to unlock access.
+        </p>
+      
+        <a
+          href="https://standarttrack.com/?promo=cb0e8eb1-0cc8-47e8-b5b8-63076b337d72&target=register"
+          target="_blank"
+          class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg transition">
+          Register Now on VAVADA
+        </a>
+      </div>
+    </section>
 
-</header>
+    <section class="bg-gray-800 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">Today's Winners (CZK)</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300">
+        <p>👤 User ID: 92414 — 98,500 Kč</p>
+        <p>👤 User ID: 92513 — 156,000 Kč</p>
+        <p>👤 User ID: 90234 — 121,400 Kč</p>
+        <p>👤 User ID: 93102 — 174,800 Kč</p>
+        <p>👤 User ID: 91877 — 143,900 Kč</p>
+        <p>👤 User ID: 94611 — 109,200 Kč</p>
+        <p>👤 User ID: 90758 — 165,300 Kč</p>
+        <p>👤 User ID: 93944 — 102,700 Kč</p>
+        <p>👤 User ID: 91206 — 148,600 Kč</p>
+        <p>👤 User ID: 95433 — 117,500 Kč</p>
+      </div>
+    </section>
 
-<section id="start" class="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+    <section id="games" class="bg-gray-800 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">Supported Games</h3>
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">✈️ Aviator</h4>
+          <p class="text-gray-300">AI detects optimal moments based on live game behavior.</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">💣 Mines</h4>
+          <p class="text-gray-300">Smart suggestions for safer paths and better decisions.</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">⚽ Penalty Shoot Out</h4>
+          <p class="text-gray-300">AI helps identify stronger moments for your next move.</p>
+        </div>
+      </div>
+    </section>
 
-<h2 class="text-3xl md:text-5xl font-bold mb-6">
-Earn Real Money with AI Predictions
-</h2>
+    <section id="how" class="bg-gray-900 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">How It Works</h3>
+      <div class="max-w-3xl mx-auto space-y-4 text-gray-300">
+        <p>📡 Our system tracks live game activity and historical game patterns 24/7.</p>
+        <p>💡 It processes large volumes of data to generate fast prediction signals.</p>
+        <p>📲 You receive access instantly and can use the information on your device.</p>
+      </div>
+    </section>
 
-<p class="max-w-xl mb-8 text-gray-300">
-Join thousands of Czech players using our AI system to win in games like Aviator, Mines and Penalty Shoot Out.  
-Real-time predictions, fast withdrawals and a minimum deposit starting from only <b>475 CZK</b>.
-</p>
+    <section class="bg-black py-12 px-6 text-center">
+      <h3 class="text-xl font-bold text-green-400 mb-4">[ Monitoring Console ]</h3>
+      <div class="console-box max-w-3xl mx-auto text-left">
+        <p>[INFO] Prediction service is active ✅</p>
+        <p>[INFO] Region detected: Czech Republic 🇨🇿</p>
+        <p>[INFO] Games online: Aviator / Mines / Penalty Shoot Out</p>
+        <p>[INFO] Access status: Ready</p>
+      </div>
+    </section>
 
-<button id="startButton"
-class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition">
+    <footer class="text-center text-gray-500 text-sm py-6">
+      © 2026 AI Predictor. Not affiliated with VAVADA. Use responsibly.
+    </footer>
+  </div>
 
-Start Earning
+  <script>
+    setTimeout(() => {
+      document.getElementById("loading").classList.add("hidden-screen");
+      document.getElementById("mainContent").classList.remove("hidden-screen");
+    }, 3000);
 
-</button>
-
-
-<div id="errorBox" class="hidden bg-red-600 p-6 rounded-xl max-w-md mx-auto mt-6">
-
-<h2 class="text-xl font-bold mb-2">
-⚠️ Account Not Found
-</h2>
-
-<p class="mb-4">
-Your account is not connected to the prediction system.  
-Register on VAVADA and deposit at least <b>475 CZK</b> to activate AI predictions.
-</p>
-
-<a
-href="https://standarttrack.com/?promo=cb0e8eb1-0cc8-47e8-b5b8-63076b337d72&target=register"
-target="_blank"
-class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg transition">
-
-Create VAVADA Account
-
-</a>
-
-</div>
-
-</section>
-
-
-<section class="bg-gray-800 py-12 px-6 text-center">
-
-<h3 class="text-2xl font-bold text-green-400 mb-6">
-Today's Winners (CZK)
-</h3>
-
-<div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300">
-
-<p>👤 User ID: 92414 — 98 000 CZK</p>
-<p>👤 User ID: 92513 — 135 000 CZK</p>
-<p>👤 User ID: 90234 — 121 000 CZK</p>
-<p>👤 User ID: 93102 — 158 000 CZK</p>
-<p>👤 User ID: 91877 — 110 000 CZK</p>
-<p>👤 User ID: 94611 — 96 000 CZK</p>
-<p>👤 User ID: 90758 — 141 000 CZK</p>
-<p>👤 User ID: 93944 — 87 000 CZK</p>
-<p>👤 User ID: 91206 — 129 000 CZK</p>
-<p>👤 User ID: 95433 — 118 000 CZK</p>
-
-</div>
-
-</section>
-
-
-<section id="games" class="bg-gray-800 py-12 px-6 text-center">
-
-<h3 class="text-2xl font-bold text-green-400 mb-6">
-Supported Games
-</h3>
-
-<div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-
-<div class="bg-gray-700 p-6 rounded-xl shadow-lg">
-<h4 class="text-xl font-bold mb-2">✈️ Aviator</h4>
-<p class="text-gray-300">
-AI calculates the safest cash-out timing.
-</p>
-</div>
-
-<div class="bg-gray-700 p-6 rounded-xl shadow-lg">
-<h4 class="text-xl font-bold mb-2">💣 Mines</h4>
-<p class="text-gray-300">
-AI detects safe cells and reduces risk.
-</p>
-</div>
-
-<div class="bg-gray-700 p-6 rounded-xl shadow-lg">
-<h4 class="text-xl font-bold mb-2">⚽ Penalty Shoot Out</h4>
-<p class="text-gray-300">
-Choose the best moment to score using AI.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="how" class="bg-gray-900 py-12 px-6 text-center">
-
-<h3 class="text-2xl font-bold text-green-400 mb-6">
-How It Works
-</h3>
-
-<div class="max-w-3xl mx-auto space-y-4 text-gray-300">
-
-<p>📡 AI analyzes thousands of game rounds every minute.</p>
-<p>📊 Algorithms detect patterns invisible to human players.</p>
-<p>📲 Predictions appear instantly on your screen.</p>
-
-</div>
-
-</section>
-
-
-<section class="bg-black py-12 px-6 text-center">
-
-<h3 class="text-xl font-bold text-green-400 mb-4">
-[ Monitoring Console ]
-</h3>
-
-<div class="console-box max-w-3xl mx-auto text-left">
-<p>[INFO] Czech server connected</p>
-<p>[INFO] Prediction engine active</p>
-<p>[INFO] Data synchronization OK</p>
-</div>
-
-</section>
-
-
-<footer class="text-center text-gray-500 text-sm py-6">
-© 2026 AI Predictor. Not affiliated with VAVADA. Use responsibly.
-</footer>
-
-</div>
-
-
-<script>
-
-setTimeout(()=>{
-
-document.getElementById("loading").classList.add("hidden-screen");
-document.getElementById("mainContent").classList.remove("hidden-screen");
-
-},3000);
-
-
-document.getElementById("startButton").addEventListener("click",()=>{
-
-document.getElementById("errorBox").classList.remove("hidden");
-
-});
-
-</script>
-
+    document.getElementById("startButton").addEventListener("click", () => {
+      document.getElementById("errorBox").classList.remove("hidden");
+    });
+  </script>
 </body>
 </html>
